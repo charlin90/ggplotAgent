@@ -19,9 +19,9 @@ This is a FastAPI wrapper for the `ggplotAgent`, a self-debugging multi-modal ag
     ```
     DASHSCOPE_API_KEY="sk-your-real-api-key"
     ```
-5.  **Ensure R is installed:** The agent executes R scripts, so `R` and the `Rscript` command must be installed and available in your system's PATH. You also need to have the required R libraries installed (e.g., `ggplot2`, `dplyr`, `readr`). You can install them in R with:
+5.  **Ensure R is installed:** The agent executes R scripts, so `R` and the `Rscript` command must be installed and available in your system's PATH. You also need to have the required R libraries installed. You can install them in R with:
     ```R
-    install.packages(c("ggplot2", "dplyr", "readr", "ggrepel"))
+    install.packages(c("tidyverse", "ggrepel"))
     ```
 
 ## Running the Server
@@ -32,7 +32,7 @@ Start the API server using Uvicorn:
 uvicorn app.main:app --reload
 ```
 
-The API will be available at `http://127.0.0.1:8000`. You can access the interactive documentation at `http://127.0.0.1:8000/docs`.
+The API will be available at `http://127.0.0.1:8000`. 
 
 ## How to Use the API
 
@@ -54,23 +54,19 @@ Then, run the `curl` command:
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/generate-plot/" \
--H "accept: application/zip" \
+-H "accept: application/json" \
 -F "prompt=Create a volcano plot. Label genes with an absolute log2FC > 2 and p_adj < 0.01." \
--F "data_file=@sample_data.csv" \
---output result.zip
+-F "data_file=@sample_data.csv"
 ```
-
-This will save a `result.zip` file containing `plot.png` and `script.R`.
 
 ### Example with a reference image:
 
 ```bash
 # Assuming you have a reference_plot.png
 curl -X POST "http://127.0.0.1:8000/generate-plot/" \
--H "accept: application/zip" \
+-H "accept: application/json" \
 -F "prompt=Make a plot like the reference image using my data." \
 -F "data_file=@sample_data.csv" \
--F "reference_image=@reference_plot.png" \
---output result_from_image.zip
-
+-F "reference_image=@reference_plot.png"
 ```
+
