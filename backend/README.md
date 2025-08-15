@@ -1,6 +1,6 @@
-# ggplot2agent API
+# ggplotAgent API
 
-This is a FastAPI wrapper for the `ggplot2agent`, a self-debugging multi-modal agent for robust and reproducible scientific visualization.
+This is a FastAPI wrapper for the `ggplotAgent`, a self-debugging multi-modal agent for robust and reproducible scientific visualization.
 
 ## Setup
 
@@ -72,4 +72,5 @@ curl -X POST "http://127.0.0.1:8000/generate-plot/" \
 -F "data_file=@sample_data.csv" \
 -F "reference_image=@reference_plot.png" \
 --output result_from_image.zip
+
 ```
