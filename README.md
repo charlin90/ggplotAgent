@@ -1,3 +1,3 @@
-<img width="2400" height="1800" alt="ggplot-visualization-2025-08-06" src="https://github.com/user-attachments/assets/f19befb2-26c5-4dcf-83b1-83b6adc28ca7" />
-
-
+# Example prompt 1:
+## Generate a publication-quality volcano plot with the x-axis representing log2 Fold Change and the y-axis representing -log10 FDR. Color points red for significantly upregulated features (log2FC > 1 and FDR < 0.05), blue for significantly downregulated features (log2FC < -1 and FDR < 0.05), and grey for all others. Add a horizontal dashed line indicating the significance threshold at FDR = 0.05, and vertical dashed lines at log2FC = 1 and -1. Ensure the plot has a clean white background with no grid lines.
+<img width="2400" height="1800" alt="ggplot-visualization-2025-08-15" src="https://github.com/user-attachments/assets/3dd307ba-6917-4274-aac2-f52c9bde4b0b" />
