@@ -1,0 +1,1 @@
+Calculate a new column, log10_ic50, which is the log10 transformation of drug_sensitivity_ic50. Then, create a scatter plot of log10_ic50 versus log2FoldChange.

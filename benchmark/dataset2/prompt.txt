@@ -1,0 +1,8 @@
+Create a histogram of base_mean_expr.
+Plot a density plot of gene_length.
+Create a bar chart showing the count of each biotype.
+Create a scatter plot of gene_length vs. base_mean_expr, and color the points according to the is_significant column.
+Create a box plot showing log2FoldChange for each biotype.
+Create a box plot of log2FoldChange grouped by biotype, and fill the boxes with different colors based on the is_significant status.
+Create a new categorical variable called 'Significance Group': 'Upregulated' if padj < 0.05 and log2FoldChange > 1, 'Downregulated' if padj < 0.05 and log2FoldChange < -1, and 'Not Significant' otherwise. Then, create a scatter plot and color the points based on this new variable.
+Create a scatter plot with base_mean_expr on the x-axis and log2FoldChange on the y-axis. Apply a log10 transformation to the x-axis and a symmetric log (symlog) transformation to the y-axis to handle negative values. Color the points by biotype, use the theme_minimal() theme, and move the legend to the bottom of the plot.
