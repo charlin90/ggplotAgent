@@ -1,4 +1,4 @@
-# ggplotAgent: API and Web App
+# ggplotAgent: Web App and API
 
 This project provides a self-debugging, multi-modal agent for robust and reproducible scientific visualization using R's `ggplot2`. It is accessible through both a user-friendly Streamlit web application and a programmatic FastAPI for developers.
 
@@ -107,3 +107,4 @@ curl -X POST "http://127.0.0.1:8000/generate-plot/" \
 -F "data_file=@sample_data.csv" \
 -F "reference_image=@reference_plot.png"
 ```
+
