@@ -1,0 +1,6 @@
+For the gene EGFR, create a box plot to compare its expression levels across different disease stages.
+Calculate the average expression for each gene within the 'Responder' group and display the results as a bar chart.
+Create a new column called 'age_group' that categorizes patients into 'Young' (age < 50) and 'Old' (age >= 50). Then, for the gene TP53, create a violin plot of expression levels faceted by this new age group.
+Create a stacked bar chart showing the proportion of 'Responders' and 'Non-responders' within each disease stage.
+Create a scatter plot to show the relationship between EGFR expression (EGFR_expr) and KRAS expression (KRAS_expr). Color the points by drug_response.
+Compare the expression of BRCA1 and TP53 between Responders and Non-responders using a box plot. Facet the plot by gene name and use the theme_classic().
