@@ -8,8 +8,16 @@ import streamlit as st
 from pathlib import Path
 
 # Import your existing agent logic and configuration
-from app.config import settings
+
 from app.agent_logic import create_agent_runnable, CustomLLM, HumanMessage, AIMessage
+
+
+DEFAULT_MODEL = "deepseek-v3-250324"
+DEFAULT_VISION_MODEL = "doubao-1-5-thinking-vision-pro-250428"
+TEMP_DIR = "temp_data"
+
+
+os.makedirs(TEMP_DIR, exist_ok=True)
 
 # --- Helper Functions ---
 
@@ -114,11 +122,7 @@ with st.sidebar:
     # Use Dashscope and Doubao API keys from settings as defaults
     # In a real application, you might use st.text_input for users to provide their own keys
     # For simplicity, we'll rely on the environment variables.
-    st.info(f"""
-    **Models in Use:**
-    - Text: `{settings.DEFAULT_MODEL}`
-    - Vision: `{settings.DEFAULT_VISION_MODEL}`
-    """)
+
     with st.expander("⚙️ Advanced Settings"):
         st.subheader("Text Model API")
         base_url = st.text_input(
@@ -128,7 +132,7 @@ with st.sidebar:
         )
         model_name = st.text_input(
             "Model Name (Text)",
-            value=settings.DEFAULT_MODEL,
+            value=DEFAULT_MODEL,
             help="e.g., deepseek-v3-250324"
         )
         api_key = st.text_input(
@@ -145,7 +149,7 @@ with st.sidebar:
         )
         vision_model = st.text_input(
             "Model Name (Vision)",
-            value=settings.DEFAULT_VISION_MODEL,
+            value=DEFAULT_VISION_MODEL,
             help="e.g., doubao-1-5-thinking-vision-pro-250428"
         )
         vision_api_key = st.text_input(
@@ -182,7 +186,7 @@ if generate_button:
         # --- Prepare for Agent Run ---
         # 1. Create a temporary directory for this request
         request_id = str(uuid.uuid4())
-        temp_dir_request = Path(settings.TEMP_DIR) / request_id
+        temp_dir_request = Path(TEMP_DIR) / request_id
         temp_dir_request.mkdir(parents=True, exist_ok=True)
         st.session_state.old_temp_dir = temp_dir_request
 
@@ -224,9 +228,9 @@ if generate_button:
                 "error_history": [],
                 "base_url": base_url,
                 "model_name": model_name,
-                "api_key": api_key or settings.DASHSCOPE_API_KEY,
-                "vision_api_key": vision_api_key or settings.DOUBAO_API_KEY,
-                "vision_model": settings.DEFAULT_VISION_MODEL,
+                "api_key": api_key,
+                "vision_api_key": vision_api_key,
+                "vision_model": DEFAULT_VISION_MODEL,
                 "vision_base_url": vision_base_url,
                 "max_retries": max_retries_input
             }
