@@ -1,6 +1,8 @@
 # ggplotAgent Streamlit App
 
 This project provides a self-debugging, multi-modal agent for robust and reproducible scientific visualization using R's `ggplot2`. This repository contains the user-friendly Streamlit application for generating plots through a simple graphical interface.
+<img width="1865" height="1023" alt="image" src="https://github.com/user-attachments/assets/b42d0c91-57c9-4e58-bafb-355ea1d729c1" />
+
 
 ## Prerequisites
 
