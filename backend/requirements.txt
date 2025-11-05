@@ -1,9 +1,0 @@
-fastapi
-uvicorn[standard]
-python-multipart
-pandas
-langchain
-langgraph
-dashscope
-pydantic-settings
-typing_extensions
