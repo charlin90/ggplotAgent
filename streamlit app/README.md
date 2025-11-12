@@ -77,7 +77,7 @@ The interface is designed to be straightforward:
 1.  **Plot Request:** In the sidebar, describe the plot you want to create in the text area (e.g., "Create a volcano plot...").
 2.  **Data File:** Upload your data in CSV format.
 3.  **Reference Image (Optional):** Upload a PNG or JPG image as a style guide for the agent to follow.
-4.  🔑 **Configure API Keys (Mandatory):** The AI agent requires API keys to work. The default settings are configured for models available through **Volcano Engine (火山引擎)**.
+4.  🔑 **Configure API Keys (Mandatory):** The AI agent requires API keys to work and supports any OpenAI-compatible API service. The default settings are configured for models available through **Volcano Engine (火山引擎)**. 
     *   You can obtain the necessary API keys, Base URL, and Model Names by registering at [volcengine.com](https://www.volcengine.com/).
     *   In the sidebar, find and expand the **"⚙️ Advanced Settings"** section.
     *   You **must** fill in the `API Key (Text)` and `API Key (Vision)` fields with your valid API keys from your provider.
