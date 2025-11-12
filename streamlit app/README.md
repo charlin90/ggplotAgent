@@ -35,7 +35,7 @@ Open your terminal and run the following command to download the project files:
 
 ```bash
 git clone https://github.com/charlin90/ggplotAgent
-cd ggplotAgent
+cd ggplotAgent/streamlit app/
 ```
 
 ### Step 2: Create a Virtual Environment
